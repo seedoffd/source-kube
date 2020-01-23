@@ -59,5 +59,9 @@ import javaposse.jobdsl.dsl.*
           stage('Pulling the code') {
               checkout scm
           }
+
+          stage("Build Docker Container") {
+              dockerImage = docker.build("source-kube ./app")
+          }
       }
     }
