@@ -57,7 +57,7 @@ import javaposse.jobdsl.dsl.*
   podTemplate(name: k8slabel, label: k8slabel, yaml: slavePodTemplate) {
       node(k8slabel) {
           stage('Pulling the code') {
-              checkout smc
+              checkout scm
           }
       }
     }
