@@ -10,7 +10,6 @@ import javaposse.jobdsl.dsl.*
         k8s-label: ${k8slabel}
       annotations:
         jenkinsjoblabel: ${env.JOB_NAME}-${env.BUILD_NUMBER}
-        iam.amazonaws.com/role: ${node_iam_role}
     spec:
       affinity:
         podAntiAffinity:
@@ -37,7 +36,7 @@ import javaposse.jobdsl.dsl.*
           - mountPath: /var/run/docker.sock
             name: docker-sock
       - name: vetbuildtools
-        image: vet-docker.${docker_artifactory_sharedtools_host_url}/docker-build-tools-image:master-latest
+        image: fuchicorp/buildtools
         imagePullPolicy: Always
         resources:
           requests:
