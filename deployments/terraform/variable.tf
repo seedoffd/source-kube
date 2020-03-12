@@ -10,8 +10,8 @@ variable "deployment_endpoint" {
   type = "map"
 
   default = {
-    dev  = "dev.smart.fuchicorp.com"
-    qa   = "qa.smart.fuchicorp.com"
-    prod = "smart.fuchicorp.com"
+    dev  = "dev.source-kube.fuchicorp.com"
+    qa   = "qa.source-kube.fuchicorp.com"
+    prod = "source-kube.fuchicorp.com"
   }
 }
